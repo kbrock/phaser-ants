@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>Ants</title>
+
+		<script type="text/javascript" src="js/phaser.js"></script>
+		<!--
+		<script type="text/javascript" src="js/Boot.js"></script>
+		<script type="text/javascript" src="js/Preload.js"></script>
+	-->
+		<script type="text/javascript" src="js/Game.js"></script>
+
+		<style>
+body {
+  background: #000;
+  color: #fff;
+  text-align: center;
+}
+a {
+  color: #fff;
+}
+.main {
+  display: inline-block;
+}
+
+footer {
+  margin-top: 20px;
+}
+		  </style>
+	</head>
+
+	<body>  
+    <header class="header" role="banner"></header>
+
+    <main class="main" role="main">
+      <div id='game-container'></div>
+    </main>
+
+    <aside class="sidebar" role="complementary"></aside>
+    <footer class="footer" role="contentinfo"></footer>
+
+		<script>
+/* note: this was populated by each of the above included scripts */
+var AntGame = AntGame || {};
+
+AntGame.game = new Phaser.Game(800, 600, Phaser.AUTO, 'game-container');
+//AntGame.game.state.add('Boot', AntGame.Boot);
+//AntGame.game.state.add('Preload', AntGame.Preload);
+//AntGame.game.state.add('Game', AntGame.Game);
+//AntGame.game.state.start('Boot');
+
+// HACK:
+AntGame.game.state.add('Game', AntGame.Game);
+AntGame.game.state.start('Game');
+</script>
+	</body>
+</html>
